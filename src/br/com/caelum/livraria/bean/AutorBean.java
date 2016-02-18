@@ -4,7 +4,7 @@ import javax.faces.bean.ManagedBean;
 
 import br.com.caelum.livraria.dao.DAO;
 import br.com.caelum.livraria.modelo.Autor;
-
+//Alexandre Belchior
 @ManagedBean
 public class AutorBean {
 
