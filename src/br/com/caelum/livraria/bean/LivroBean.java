@@ -56,11 +56,17 @@ public class LivroBean {
 
 		if (livro.getAutores().isEmpty()) {
 			//throw new RuntimeException("Livro deve ter pelo menos um Autor.");
-			
+			FacesContext.getCurrentInstance().addMessage("autor", new FacesMessage("Livro deve ter pelo menos um Autor."));
+			return;
 		}
 
 		new DAO<Livro>(Livro.class).adiciona(this.livro);
+		this.livro = new Livro();
 	}
+	
+	public List<Livro> getLivros() {
+		  return new DAO<Livro>(Livro.class).listaTodos();
+		}
 	
 	public void comecaComUm(FacesContext fc, UIComponent component, Object value)throws ValidatorException{
 		
